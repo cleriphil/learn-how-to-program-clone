@@ -12,10 +12,10 @@ class LessonsController < ApplicationController
 
   def create
     @section = Section.find(params[:section_id])
-    @lesson = @section.lessons.new(lesson_params)
+    @lesson = Lesson.new(lesson_params)
     if @lesson.save
       flash[:notice] = "Lesson successfully added!!"
-      redirect_to section_path(@section)
+      redirect_to section_path(@lesson.section_id)
     else
       render :new
     end
@@ -53,6 +53,6 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:name, :content, :number)
+    params.require(:lesson).permit(:name, :content, :number, :section_id)
   end
 end

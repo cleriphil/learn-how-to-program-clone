@@ -7,5 +7,7 @@
   <%= f.text_field :content %>
   <%= f.label :number %>
   <%= f.text_field :number %>
+  <%= f.label :section_id %>
+  <%= f.collection_select :section_id, Section.all, :id, :title %>
   <%= f.submit %>
 <% end %>
