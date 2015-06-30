@@ -20,6 +20,18 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.update(lesson_params)
+      redirect_to lesson_path(@lesson)
+    else
+      render :edit
+    end
+  end
 
 
   private
