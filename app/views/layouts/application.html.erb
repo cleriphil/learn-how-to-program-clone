@@ -7,6 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+      <div class="container">
+        <div class="navbar-header">
+
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+
+          <a href="" class="navbar-brand">Don't Learn To Program</a>
+
+        </div><!-- end of navbar header div -->
+         <div class="collapse navbar-collapse" id="navbar-collapse">
+
+
+
+          <ul class="nav navbar-nav">
+          <li><a href="#">FAQ </a></li>
+          <li><a href="#">Contact</a></li>
+          </ul>
+        </div><!-- end of nav that contains ul links -->
+
+      </div><!--end of nav container -->
+    </nav><!-- End navbar -->
   <div class="container">
     <p id="notice"><%= flash[:notice] %></p>
     <!-- <p id="alert"><%= flash[:alert] %></p> -->
