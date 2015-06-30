@@ -12,7 +12,7 @@ class LessonsController < ApplicationController
 
   def create
     @section = Section.find(params[:section_id])
-    @lesson = Lesson.new(lesson_params)
+    @lesson = @section.lessons.new(lesson_params)
     if @lesson.save
       flash[:notice] = "Lesson successfully added!!"
       redirect_to section_path(@section)
@@ -47,7 +47,7 @@ class LessonsController < ApplicationController
     @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
-    redirect_to lessons_path
+    redirect_to section_path(@section)
   end
 
 
