@@ -6,18 +6,18 @@
 
 <p>Number: <%= @lesson.number %></p>
 
-<p><%= link_to "Edit", edit_lesson_path(@lesson) %></li>
-<p><%= link_to "Delete", lesson_path(@lesson),
+<p><%= link_to "Edit", edit_section_lesson_path(@section, @lesson) %></li>
+<p><%= link_to "Delete", section_lesson_path(@section, @lesson),
                     :data => {:confirm => "Confirm?",
                     :method => "delete"} %></p>
 
 
 
 <% if @next %>
-  <%= link_to "Next", lesson_path(@next) %>
+  <%= link_to "Next", section_lesson_path(@section, @next) %>
 <% end %>
 
 
 <% if @previous %>
-  <%= link_to "Previous", lesson_path(@previous) %>
+  <%= link_to "Previous", section_lesson_path(@section, @previous) %>
 <% end %>

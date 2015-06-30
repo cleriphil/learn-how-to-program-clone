@@ -1,3 +1,4 @@
+require 'rails_helper'
 
 describe "the edit lesson process" do
   it "shows a lesson" do

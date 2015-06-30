@@ -1,33 +1,40 @@
 class LessonsController < ApplicationController
   def index
+    @section = Section.find(params[:section_id])
     @lessons = Lesson.order(:number)
   end
+  # get rid of index
 
   def new
+      @section = Section.find(params[:section_id])
       @lesson = Lesson.new
   end
 
   def create
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
       flash[:notice] = "Lesson successfully added!!"
-      redirect_to lessons_path
+      redirect_to section_path(@section)
     else
       render :new
     end
   end
 
   def show
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     @previous = Lesson.where("number < ?", @lesson.number).last
     @next = Lesson.where("number > ?", @lesson.number).first
   end
 
   def edit
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
   end
 
   def update
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
       redirect_to lesson_path(@lesson)
@@ -37,6 +44,7 @@ class LessonsController < ApplicationController
   end
 
   def destroy
+    @section = Section.find(params[:section_id])
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
     redirect_to lessons_path

@@ -1,0 +1,16 @@
+<% content_for :title, "Learn To Program | Sections" %>
+
+<h1>Index Sections</h1>
+
+<% if @sections.any? %>
+   <ul>
+     <% @sections.each do |section| %>
+       <li><%= link_to section.title, section_path(section) %></li>
+     <% end %>
+   </ul>
+<% else %>
+   <p><h3>No Sections Currently in Index</h3></p>
+ <% end %>
+
+
+<%= link_to 'Add a New Section', new_section_path %>

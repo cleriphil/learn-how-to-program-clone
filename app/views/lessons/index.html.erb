@@ -1,16 +1,16 @@
-<% content_for :title, "Learn To Program | Lessons" %>
-
-<h1>Index Lessons</h1>
-
-<% if @lessons.any? %>
-  <ul>
-    <% @lessons.each do |lesson| %>
-      <li><%= link_to lesson.name, lesson_path(lesson) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p><h3>No Lessons Currently in Index</h3></p>
-<% end %>
-
-
-<%= link_to 'Add a New Lesson', new_lesson_path %>
+<!-- # <% content_for :title, "Learn To Program | Lessons" %>
+#
+# <h1>Index Lessons</h1>
+#
+# <% if @lessons.any? %>
+#   <ul>
+#     <% @lessons.each do |lesson| %>
+#       <li><%= link_to lesson.name, lesson_path(lesson) %></li>
+#     <% end %>
+#   </ul>
+# <% else %>
+#   <p><h3>No Lessons Currently in Index</h3></p>
+# <% end %>
+#
+#
+# <%= link_to 'Add a New Lesson', new_section_lesson_path(@section) %> -->
