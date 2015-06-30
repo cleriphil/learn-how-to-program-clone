@@ -9,6 +9,7 @@ describe "the add a lesson process" do
     fill_in 'Number', :with => 1
     click_on 'Create Lesson'
     expect(page).to have_content 'Lessons'
+
   end
 
   it "gives an error when no data is entered into form fields" do
